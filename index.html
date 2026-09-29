@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bethan & Lewis | Wedding Website</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        'cream-card': '#FAF6EE',
+                        sage: '#4A5D55',
+                        'sage-dark': '#384842',
+                        'sage-light': '#738A81',
+                        'sage-soft': '#E6ECE9',
+                        accent: '#2C3A35',
+                    },
+                    fontFamily: {
+                        script: ['"Alex Brush"', 'cursive'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom aesthetics matching the invitation */
+        body {
+            background-color: #FDFBF7;
+            color: #4A5D55;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-script-style {
+            font-family: 'Alex Brush', cursive;
+        }
+
+        .font-serif-style {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Subtle photo tilt stack matching invitation */
+        .photo-frame {
+            background-color: #FAF6EE;
+            padding: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.03) rotate(0deg) !important;
+            z-index: 30;
+            box-shadow: 0 20px 30px -10px rgba(74, 93, 85, 0.2);
+        }
+
+        /* Soft borders & buttons */
+        .btn-sage {
+            background-color: #4A5D55;
+            color: #FDFBF7;
+            transition: all 0.3s ease;
+        }
+        .btn-sage:hover {
+            background-color: #384842;
+            box-shadow: 0 4px 15px rgba(74, 93, 85, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-sage {
+            border: 1px solid #4A5D55;
+            color: #4A5D55;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-sage:hover {
+            background-color: #4A5D55;
+            color: #FDFBF7;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #738A81;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-sage/10 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#hero" class="font-serif-style text-2xl tracking-wider text-sage font-semibold">
+                    B <span class="font-script-style text-3xl font-normal">&amp;</span> L
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-xs font-medium tracking-widest uppercase text-sage">
+                    <a href="#details" class="hover:text-sage-dark transition">Details</a>
+                    <a href="#schedule" class="hover:text-sage-dark transition">Schedule</a>
+                    <a href="#travel" class="hover:text-sage-dark transition">Travel</a>
+                    <a href="#gallery" class="hover:text-sage-dark transition">Gallery</a>
+                    <a href="#gift" class="hover:text-sage-dark transition">Registry</a>
+                    <a href="#rsvp" class="hover:text-sage-dark transition font-semibold underline underline-offset-4 decoration-sage/40">RSVP</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-sage focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-sage/10 px-4 pt-2 pb-6 space-y-3 text-center">
+            <a href="#details" class="mobile-link block py-2 text-sm uppercase tracking-widest text-sage">Details</a>
+            <a href="#schedule" class="mobile-link block py-2 text-sm uppercase tracking-widest text-sage">Schedule</a>
+            <a href="#travel" class="mobile-link block py-2 text-sm uppercase tracking-widest text-sage">Travel &amp; Stay</a>
+            <a href="#gallery" class="mobile-link block py-2 text-sm uppercase tracking-widest text-sage">Gallery</a>
+            <a href="#gift" class="mobile-link block py-2 text-sm uppercase tracking-widest text-sage">Registry</a>
+            <a href="#rsvp" class="mobile-link inline-block mt-2 px-6 py-2 btn-sage text-xs uppercase tracking-widest rounded-full">RSVP Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-28 pb-16 md:pt-36 md:pb-24 px-4 max-w-6xl mx-auto min-h-screen flex items-center">
+        <div class="grid md:grid-cols-12 gap-8 items-center w-full">
+            
+            <!-- Invitation Text Column -->
+            <div class="md:col-span-7 text-center md:text-left space-y-6 pr-0 md:pr-6">
+                <div>
+                    <h1 class="font-script-style text-5xl sm:text-7xl lg:text-8xl text-sage mb-2 tracking-wide">
+                        You Are Invited
+                    </h1>
+                    <p class="font-serif-style text-lg sm:text-xl uppercase tracking-widest text-sage/80 mt-1">
+                        To the wedding of
+                    </p>
+                </div>
+
+                <div class="space-y-1">
+                    <h2 class="font-serif-style text-4xl sm:text-5xl lg:text-6xl text-sage font-medium tracking-tight">
+                        Bethan Harvey
+                    </h2>
+                    <p class="font-script-style text-3xl sm:text-4xl text-sage/70 my-1">&amp;</p>
+                    <h2 class="font-serif-style text-4xl sm:text-5xl lg:text-6xl text-sage font-medium tracking-tight">
+                        Lewis Allison
+                    </h2>
+                </div>
+
+                <div class="py-4 border-y border-sage/20 my-6 max-w-md mx-auto md:mx-0 space-y-1">
+                    <p class="font-serif-style text-xl sm:text-2xl text-sage uppercase tracking-widest font-medium">
+                        Wednesday, 9th June 2027
+                    </p>
+                    <p class="font-serif-style text-lg text-sage/80 uppercase tracking-wider">
+                        At 1:30 PM
+                    </p>
+                    <p class="font-serif-style text-lg text-sage/90 tracking-widest mt-2 font-medium">
+                        BLACKSHAW BARNS <br> WEST KILBRIDE <span class="text-base font-normal">KA23 9PG</span>
+                    </p>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="pt-2">
+                    <p class="text-xs uppercase tracking-widest text-sage/70 mb-3 font-medium">Counting down to the big day</p>
+                    <div class="grid grid-cols-4 gap-2 max-w-sm mx-auto md:mx-0 text-center">
+                        <div class="bg-cream-card border border-sage/20 p-3 rounded-lg shadow-sm">
+                            <span id="days" class="font-serif-style text-2xl sm:text-3xl font-bold text-sage">00</span>
+                            <span class="block text-[10px] uppercase tracking-wider text-sage/70 mt-1">Days</span>
+                        </div>
+                        <div class="bg-cream-card border border-sage/20 p-3 rounded-lg shadow-sm">
+                            <span id="hours" class="font-serif-style text-2xl sm:text-3xl font-bold text-sage">00</span>
+                            <span class="block text-[10px] uppercase tracking-wider text-sage/70 mt-1">Hours</span>
+                        </div>
+                        <div class="bg-cream-card border border-sage/20 p-3 rounded-lg shadow-sm">
+                            <span id="minutes" class="font-serif-style text-2xl sm:text-3xl font-bold text-sage">00</span>
+                            <span class="block text-[10px] uppercase tracking-wider text-sage/70 mt-1">Mins</span>
+                        </div>
+                        <div class="bg-cream-card border border-sage/20 p-3 rounded-lg shadow-sm">
+                            <span id="seconds" class="font-serif-style text-2xl sm:text-3xl font-bold text-sage">00</span>
+                            <span class="block text-[10px] uppercase tracking-wider text-sage/70 mt-1">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="#rsvp" class="px-8 py-3.5 btn-sage rounded-full text-xs uppercase tracking-widest font-semibold shadow-md w-full sm:w-auto text-center">
+                        RSVP Online
+                    </a>
+                    <a href="#details" class="px-8 py-3.5 btn-outline-sage rounded-full text-xs uppercase tracking-widest font-semibold w-full sm:w-auto text-center">
+                        Event Details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tilted Photo Stack (Matching Invitation Right Column) -->
+            <div class="md:col-span-5 relative mt-8 md:mt-0 flex flex-col items-center justify-center space-y-[-2rem] sm:space-y-[-3rem]">
+                <!-- Photo Frame 1 -->
+                <div class="photo-frame rounded-sm transform rotate-2 w-64 sm:w-72 relative z-10">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Bethan and Lewis smiling together" class="w-full h-44 object-cover rounded-sm">
+                </div>
+                <!-- Photo Frame 2 -->
+                <div class="photo-frame rounded-sm transform -rotate-3 w-64 sm:w-72 relative z-20">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Couple laughing" class="w-full h-44 object-cover rounded-sm">
+                </div>
+                <!-- Photo Frame 3 -->
+                <div class="photo-frame rounded-sm transform rotate-3 w-64 sm:w-72 relative z-10">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80" alt="Water embrace" class="w-full h-44 object-cover rounded-sm">
+                </div>
+                <!-- Photo Frame 4 -->
+                <div class="photo-frame rounded-sm transform -rotate-2 w-64 sm:w-72 relative z-0">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Romantic sunset moment" class="w-full h-44 object-cover rounded-sm">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Venue & Details Section -->
+    <section id="details" class="py-20 bg-cream-card border-y border-sage/10">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="font-script-style text-4xl text-sage">The Venue</span>
+                <h2 class="font-serif-style text-3xl sm:text-4xl text-sage uppercase tracking-wider mt-1 font-medium">
+                    Blackshaw Barns
+                </h2>
+                <div class="w-16 h-0.5 bg-sage/30 mx-auto my-4"></div>
+                <p class="text-xs sm:text-sm text-sage/80 uppercase tracking-widest">
+                    West Kilbride, North Ayrshire, Scotland • KA23 9PG
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Venue Card Description -->
+                <div class="space-y-6 bg-cream p-8 rounded-2xl border border-sage/15 shadow-sm">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-sage text-2xl pt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif-style text-2xl text-sage font-medium">Getting There</h3>
+                            <p class="text-sm text-sage/80 mt-2 leading-relaxed">
+                                Blackshaw Barns is nestled in the breathtaking countryside of West Kilbride, offering scenic coastal views over the Firth of Clyde. 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 pt-4 border-t border-sage/10">
+                        <div class="text-sage text-2xl pt-1">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif-style text-2xl text-sage font-medium">Timing</h3>
+                            <p class="text-sm text-sage/80 mt-2 leading-relaxed">
+                                Guests are welcome to arrive from <strong>12:45 PM</strong>. <br>The ceremony will promptly begin at <strong>1:30 PM</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex space-x-4">
+                        <a href="https://maps.google.com/?q=Blackshaw+Barns+West+Kilbride+KA23+9PG" target="_blank" class="btn-sage px-6 py-2.5 rounded-full text-xs uppercase tracking-widest inline-flex items-center space-x-2">
+                            <span>Open in Google Maps</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Placeholder / Image -->
+                <div class="rounded-2xl overflow-hidden shadow-md border border-sage/20 relative group h-80 bg-sage-soft flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Blackshaw Barns Venue" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-sage-dark/30 flex flex-col items-center justify-center text-white p-6 text-center backdrop-blur-[1px]">
+                        <i class="fa-solid fa-map-pin text-3xl mb-2 text-cream"></i>
+                        <h4 class="font-serif-style text-2xl font-medium">Blackshaw Barns</h4>
+                        <p class="text-xs uppercase tracking-widest mt-1 text-cream/90">West Kilbride KA23 9PG</p>
+                        <a href="https://maps.google.com/?q=Blackshaw+Barns+West+Kilbride+KA23+9PG" target="_blank" class="mt-4 px-4 py-2 bg-cream text-sage rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-white transition">
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 px-4 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="font-script-style text-4xl text-sage">Order of Events</span>
+            <h2 class="font-serif-style text-3xl sm:text-4xl text-sage uppercase tracking-wider mt-1 font-medium">
+                The Schedule
+            </h2>
+            <p class="text-xs text-sage/70 uppercase tracking-widest mt-2">Wednesday, June 9th, 2027</p>
+            <div class="w-16 h-0.5 bg-sage/30 mx-auto my-4"></div>
+        </div>
+
+        <div class="relative border-l-2 border-sage/20 ml-4 sm:ml-32 space-y-12 pl-6 sm:pl-10">
+            
+            <!-- Event 1 -->
+            <div class="relative">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-0 bg-cream border-2 border-sage rounded-full w-6 h-6 flex items-center justify-center text-xs text-sage">
+                    <i class="fa-solid fa-church text-[10px]"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-0 text-sage font-serif-style text-xl font-semibold mb-1 sm:mb-0">
+                    1:30 PM
+                </div>
+                <div>
+                    <h3 class="font-serif-style text-2xl text-sage font-semibold">The Ceremony</h3>
+                    <p class="text-sm text-sage/80 mt-1">Gathering at the rustic barn gallery to exchange vows and ring exchanges.</p>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="relative">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-0 bg-cream border-2 border-sage rounded-full w-6 h-6 flex items-center justify-center text-xs text-sage">
+                    <i class="fa-solid fa-wine-glass text-[10px]"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-0 text-sage font-serif-style text-xl font-semibold mb-1 sm:mb-0">
+                    2:30 PM
+                </div>
+                <div>
+                    <h3 class="font-serif-style text-2xl text-sage font-semibold">Drinks Reception &amp; Canapés</h3>
+                    <p class="text-sm text-sage/80 mt-1">Prosecco, cocktails, and acoustic music on the lawn while photos are taken.</p>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="relative">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-0 bg-cream border-2 border-sage rounded-full w-6 h-6 flex items-center justify-center text-xs text-sage">
+                    <i class="fa-solid fa-utensils text-[10px]"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-0 text-sage font-serif-style text-xl font-semibold mb-1 sm:mb-0">
+                    4:30 PM
+                </div>
+                <div>
+                    <h3 class="font-serif-style text-2xl text-sage font-semibold">Wedding Breakfast &amp; Speeches</h3>
+                    <p class="text-sm text-sage/80 mt-1">A delicious three-course meal followed by toasts, champagne, and stories.</p>
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="relative">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-0 bg-cream border-2 border-sage rounded-full w-6 h-6 flex items-center justify-center text-xs text-sage">
+                    <i class="fa-solid fa-music text-[10px]"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-0 text-sage font-serif-style text-xl font-semibold mb-1 sm:mb-0">
+                    7:30 PM
+                </div>
+                <div>
+                    <h3 class="font-serif-style text-2xl text-sage font-semibold">Evening Reception &amp; Dancing</h3>
+                    <p class="text-sm text-sage/80 mt-1">Cutting the cake, first dance, and live band to dance the night away!</p>
+                </div>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="relative">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-0 bg-cream border-2 border-sage rounded-full w-6 h-6 flex items-center justify-center text-xs text-sage">
+                    <i class="fa-solid fa-moon text-[10px]"></i>
+                </div>
+                <div class="sm:absolute sm:-left-36 sm:top-0 text-sage font-serif-style text-xl font-semibold mb-1 sm:mb-0">
+                    12:00 AM
+                </div>
+                <div>
+                    <h3 class="font-serif-style text-2xl text-sage font-semibold">Carriages</h3>
+                    <p class="text-sm text-sage/80 mt-1">Fond farewells and safe travels home!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-20 bg-cream-card border-t border-sage/10 px-4">
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-cream p-8 sm:p-12 rounded-3xl border border-sage/20 shadow-lg relative">
+                
+                <div class="text-center mb-10">
+                    <span class="font-script-style text-5xl text-sage">R.S.V.P.</span>
+                    <h2 class="font-serif-style text-2xl sm:text-3xl text-sage uppercase tracking-wider mt-1 font-medium">
+                        Kindly Respond
+                    </h2>
+                    <p class="text-xs text-sage/70 uppercase tracking-widest mt-2">Please let us know by 1st April 2027</p>
+                    <div class="w-12 h-0.5 bg-sage/30 mx-auto my-4"></div>
+                </div>
+
+                <form id="rsvp-form" class="space-y-6">
+                    <!-- Guest Names -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-semibold text-sage mb-2">Full Name(s) *</label>
+                        <input type="text" required placeholder="e.g. Jane & John Smith" 
+                            class="w-full px-4 py-3 bg-cream-card border border-sage/20 rounded-xl focus:outline-none focus:border-sage text-sage text-sm placeholder-sage/40 transition">
+                    </div>
+
+                    <!-- Email Address -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-semibold text-sage mb-2">Email Address *</label>
+                        <input type="email" required placeholder="your.email@example.com" 
+                            class="w-full px-4 py-3 bg-cream-card border border-sage/20 rounded-xl focus:outline-none focus:border-sage text-sage text-sm placeholder-sage/40 transition">
+                    </div>
+
+                    <!-- Attendance Radios -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-semibold text-sage mb-3">Will you be attending? *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="flex items-center p-3 border border-sage/20 rounded-xl cursor-pointer hover:bg-sage-soft/50 transition">
+                                <input type="radio" name="attendance" value="attending" required class="text-sage focus:ring-sage accent-sage">
+                                <span class="ml-3 text-sm text-sage font-medium">Joyfully Accepts</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-sage/20 rounded-xl cursor-pointer hover:bg-sage-soft/50 transition">
+                                <input type="radio" name="attendance" value="declining" required class="text-sage focus:ring-sage accent-sage">
+                                <span class="ml-3 text-sm text-sage font-medium">Regretfully Declines</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Dietary Requirements -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-semibold text-sage mb-2">Dietary Requirements / Allergies</label>
+                        <textarea rows="3" placeholder="Please specify for each guest (e.g., Vegetarian, Vegan, Nut allergy, None)" 
+                            class="w-full px-4 py-3 bg-cream-card border border-sage/20 rounded-xl focus:outline-none focus:border-sage text-sage text-sm placeholder-sage/40 transition"></textarea>
+                    </div>
+
+                    <!-- Song Request -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-semibold text-sage mb-2">Song Request</label>
+                        <input type="text" placeholder="What song gets you on the dance floor?" 
+                            class="w-full px-4 py-3 bg-cream-card border border-sage/20 rounded-xl focus:outline-none focus:border-sage text-sage text-sm placeholder-sage/40 transition">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 btn-sage rounded-xl font-semibold text-xs uppercase tracking-widest shadow-md flex items-center justify-center space-x-2">
+                        <span>Send RSVP Response</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                </form>
+
+                <!-- Success Confirmation Box (Hidden initially) -->
+                <div id="rsvp-success" class="hidden text-center py-12 space-y-4">
+                    <div class="w-16 h-16 bg-sage/10 text-sage rounded-full flex items-center justify-center mx-auto text-2xl">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif-style text-3xl text-sage font-semibold">Thank You!</h3>
+                    <p class="text-sm text-sage/80 max-w-md mx-auto">
+                        Your RSVP response has been received. We can't wait to celebrate our special day with you!
+                    </p>
+                    <button onclick="resetRSVP()" class="mt-4 px-6 py-2 btn-outline-sage rounded-full text-xs uppercase tracking-widest">
+                        Submit Another Response
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation & Travel Section -->
+    <section id="travel" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="font-script-style text-4xl text-sage">Guest Information</span>
+            <h2 class="font-serif-style text-3xl sm:text-4xl text-sage uppercase tracking-wider mt-1 font-medium">
+                Travel &amp; Accommodations
+            </h2>
+            <div class="w-16 h-0.5 bg-sage/30 mx-auto my-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Accommodation 1 -->
+            <div class="bg-cream-card border border-sage/15 p-6 rounded-2xl space-y-3 flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="text-sage text-xl mb-2"><i class="fa-solid fa-hotel"></i></div>
+                    <h3 class="font-serif-style text-2xl text-sage font-medium">The Waterside Hotel</h3>
+                    <p class="text-xs uppercase tracking-wider text-sage/70 font-semibold mb-2">Ardrossan (10 mins away)</p>
+                    <p class="text-xs text-sage/80 leading-relaxed">
+                        Modern coastal hotel offering lovely views over the Isle of Arran. Book early as spaces fill up fast.
+                    </p>
+                </div>
+                <a href="#" class="inline-block text-xs font-semibold uppercase tracking-widest text-sage hover:underline pt-4">
+                    Visit Website &rarr;
+                </a>
+            </div>
+
+            <!-- Accommodation 2 -->
+            <div class="bg-cream-card border border-sage/15 p-6 rounded-2xl space-y-3 flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="text-sage text-xl mb-2"><i class="fa-solid fa-bed"></i></div>
+                    <h3 class="font-serif-style text-2xl text-sage font-medium">Seamill Hydro Hotel</h3>
+                    <p class="text-xs uppercase tracking-wider text-sage/70 font-semibold mb-2">West Kilbride (5 mins away)</p>
+                    <p class="text-xs text-sage/80 leading-relaxed">
+                        A historic luxury resort right on the beach, situated very close to Blackshaw Barns.
+                    </p>
+                </div>
+                <a href="#" class="inline-block text-xs font-semibold uppercase tracking-widest text-sage hover:underline pt-4">
+                    Visit Website &rarr;
+                </a>
+            </div>
+
+            <!-- Taxis & Travel -->
+            <div class="bg-cream-card border border-sage/15 p-6 rounded-2xl space-y-3 flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="text-sage text-xl mb-2"><i class="fa-solid fa-taxi"></i></div>
+                    <h3 class="font-serif-style text-2xl text-sage font-medium">Taxis &amp; Parking</h3>
+                    <p class="text-xs uppercase tracking-wider text-sage/70 font-semibold mb-2">Local Taxis</p>
+                    <p class="text-xs text-sage/80 leading-relaxed">
+                        Ample free guest parking is available at Blackshaw Barns. We advise pre-booking taxis for carriages at midnight.
+                    </p>
+                </div>
+                <p class="text-xs text-sage/70 font-semibold pt-4">West Kilbride Cabs: 01294 822222</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Registry Section -->
+    <section id="gift" class="py-16 bg-cream-card border-y border-sage/10 px-4 text-center">
+        <div class="max-w-2xl mx-auto space-y-4">
+            <span class="font-script-style text-4xl text-sage">With Love</span>
+            <h2 class="font-serif-style text-3xl text-sage uppercase tracking-wider font-medium">
+                Registry &amp; Gifts
+            </h2>
+            <div class="w-12 h-0.5 bg-sage/30 mx-auto my-3"></div>
+            <p class="text-sm text-sage/80 leading-relaxed max-w-xl mx-auto">
+                The most important thing to us is having you present to celebrate with us on our special day. However, if you would like to give a gift, a contribution towards our honeymoon fund would be warmly appreciated!
+            </p>
+            <div class="pt-4">
+                <a href="#rsvp" class="px-6 py-2.5 btn-outline-sage rounded-full text-xs uppercase tracking-widest inline-flex items-center space-x-2">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>Honeymoon Fund Info</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="font-script-style text-4xl text-sage">Moments</span>
+            <h2 class="font-serif-style text-3xl sm:text-4xl text-sage uppercase tracking-wider mt-1 font-medium">
+                Photo Gallery
+            </h2>
+            <div class="w-16 h-0.5 bg-sage/30 mx-auto my-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="photo-frame rounded-sm transform hover:-rotate-1 transition">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80" class="w-full h-64 object-cover">
+                <p class="text-center font-script-style text-xl text-sage mt-2">The Engagement</p>
+            </div>
+
+            <div class="photo-frame rounded-sm transform rotate-2 transition">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=80" class="w-full h-64 object-cover">
+                <p class="text-center font-script-style text-xl text-sage mt-2">By the Water</p>
+            </div>
+
+            <div class="photo-frame rounded-sm transform -rotate-2 transition">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=500&q=80" class="w-full h-64 object-cover">
+                <p class="text-center font-script-style text-xl text-sage mt-2">Summer Laughs</p>
+            </div>
+
+            <div class="photo-frame rounded-sm transform rotate-1 transition">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80" class="w-full h-64 object-cover">
+                <p class="text-center font-script-style text-xl text-sage mt-2">Sunset Walks</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-cream-card border-t border-sage/10 text-center">
+        <div class="max-w-4xl mx-auto px-4 space-y-3">
+            <p class="font-script-style text-4xl text-sage">Bethan &amp; Lewis</p>
+            <p class="text-xs uppercase tracking-widest text-sage/60">09.06.2027 • Blackshaw Barns, West Kilbride</p>
+            <p class="text-[10px] text-sage/40 uppercase tracking-wider pt-4">&copy; 2027 Bethan Harvey &amp; Lewis Allison. Crafted with love.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Countdown & RSVP Logic -->
+    <script>
+        // Countdown Timer Logic
+        const targetDate = new Date('June 9, 2027 13:30:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // RSVP Form Submission Simulation
+        const rsvpForm = document.getElementById('rsvp-form');
+        const rsvpSuccess = document.getElementById('rsvp-success');
+
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            rsvpForm.classList.add('hidden');
+            rsvpSuccess.classList.remove('hidden');
+        });
+
+        function resetRSVP() {
+            rsvpForm.reset();
+            rsvpSuccess.classList.add('hidden');
+            rsvpForm.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
