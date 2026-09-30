@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
+    <!-- Swiper CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -897,9 +901,9 @@
     </div>
 </section>
 
-    <!-- Photo Gallery Section -->
+    <!-- Photo Gallery Section (Carousel / Slider) -->
     <section id="gallery" class="py-20 px-4 max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-12">
             <span class="font-script-style text-4xl text-sage">Moments</span>
             <h2 class="font-serif-style text-3xl sm:text-4xl text-sage uppercase tracking-wider mt-1 font-medium">
                 Photo Gallery
@@ -907,28 +911,104 @@
             <div class="w-16 h-0.5 bg-sage/30 mx-auto my-4"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="photo-frame rounded-sm transform hover:-rotate-1 transition">
-                <img src=<img src="noimage.jpg" alt="Image" class="w-full h-64 object-cover"> onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
-                <p class="text-center font-script-style text-xl text-sage mt-2">Caption here.</p>
+        <!-- Swiper Container -->
+        <div class="swiper gallery-swiper pb-12">
+            <div class="swiper-wrapper">
+                
+                <!-- Photo 1 -->
+                <div class="swiper-slide">
+                    <div class="photo-frame rounded-sm transform hover:-rotate-1 transition">
+                        <img src="noimage.jpg" alt="Gallery Photo 1" class="w-full h-72 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
+                        <p class="text-center font-script-style text-xl text-sage mt-2">Caption 1</p>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="swiper-slide">
+                    <div class="photo-frame rounded-sm transform rotate-2 transition">
+                        <img src="noimage.jpg" alt="Gallery Photo 2" class="w-full h-72 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
+                        <p class="text-center font-script-style text-xl text-sage mt-2">Caption 2</p>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="swiper-slide">
+                    <div class="photo-frame rounded-sm transform -rotate-2 transition">
+                        <img src="noimage.jpg" alt="Gallery Photo 3" class="w-full h-72 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
+                        <p class="text-center font-script-style text-xl text-sage mt-2">Caption 3</p>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="swiper-slide">
+                    <div class="photo-frame rounded-sm transform rotate-1 transition">
+                        <img src="noimage.jpg" alt="Gallery Photo 4" class="w-full h-72 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
+                        <p class="text-center font-script-style text-xl text-sage mt-2">Caption 4</p>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="swiper-slide">
+                    <div class="photo-frame rounded-sm transform -rotate-1 transition">
+                        <img src="noimage.jpg" alt="Gallery Photo 5" class="w-full h-72 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
+                        <p class="text-center font-script-style text-xl text-sage mt-2">Caption 5</p>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="swiper-slide">
+                    <div class="photo-frame rounded-sm transform rotate-2 transition">
+                        <img src="noimage.jpg" alt="Gallery Photo 6" class="w-full h-72 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
+                        <p class="text-center font-script-style text-xl text-sage mt-2">Caption 6</p>
+                    </div>
+                </div>
+
+                <!-- Add or remove as many <div class="swiper-slide">...</div> blocks as you like! -->
+
             </div>
 
-            <div class="photo-frame rounded-sm transform rotate-2 transition">
-                <img src=<img src="noimage.jpg" alt="Image" class="w-full h-64 object-cover"> onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
-                <p class="text-center font-script-style text-xl text-sage mt-2">Caption here.</p>
-            </div>
-
-            <div class="photo-frame rounded-sm transform -rotate-2 transition">
-                <img src=<img src="noimage.jpg" alt="Image" class="w-full h-64 object-cover"> onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
-                <p class="text-center font-script-style text-xl text-sage mt-2">Caption here.</p>
-            </div>
-
-            <div class="photo-frame rounded-sm transform rotate-1 transition">
-                <img src=<img src="noimage.jpg" alt="Image" class="w-full h-64 object-cover"> onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF6F0/4A5D55?text=Coming+Soon';">
-                <p class="text-center font-script-style text-xl text-sage mt-2">Caption here.</p>
-            </div>
+            <!-- Dots Pagination & Navigation Arrows -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next !text-sage"></div>
+            <div class="swiper-button-prev !text-sage"></div>
         </div>
     </section>
+
+    <!-- Carousel Initialization Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.gallery-swiper', {
+                loop: true,               // Continuously loops infinitely
+                spaceBetween: 24,         // Gap between cards in px
+                autoplay: {
+                    delay: 3500,          // Auto-rotates every 3.5 seconds
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    // Mobile: show 1 photo at a time
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    // Tablet: show 2 photos at a time
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    // Desktop: show 3 photos at a time
+                    1024: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="py-12 bg-cream-card border-t border-sage/10 text-center">
